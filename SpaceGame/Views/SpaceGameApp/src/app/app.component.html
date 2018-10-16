@@ -1,0 +1,22 @@
+<p>{{ error }}</p>
+<ul>
+  <li *ngFor="let group of groups">
+    <h2>{{ group.name }}</h2>
+    <p>{{ group.elapsedSeconds }} s</p>
+  </li>
+</ul>
+
+<br/>
+
+<h1>Current Group</h1>
+<p>Name: {{ currentGroup.name }}</p>
+<p>Start Time: {{ currentGroup.startTime }}</p>
+<ul>
+  <li *ngIf="currentGroup.hostPlayer">
+    <h2>{{ currentGroup.hostPlayer.name }} - Host</h2>
+  </li>
+  <li *ngFor="let client of currentGroup.clients">
+    <h2>{{ client.name }}</h2>
+  </li>
+</ul>
+
